@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Amazon Scraper</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="static/vendor/bootstrap/css/bootstrap.min.css">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="static/styles/css/main.css">
+	<!--===============================================================================================-->
+</head>
+<body>
+	<div class="container">
+		<h1>Amazon Scraper</h1>
+		<div>
+			<form action="{{ url_for('index') }}" method="POST">
+				<input type="text" id="search" name="search" placeholder="Enter Asin">
+				<input type="submit" value="Submit">
+			</form>
+		</div>
+		<div class="limiter">
+			<div class="container-table100">
+				<div class="wrap-table100">
+					<div class="table">
+						{% if data_available %}
+						<div class="row header">
+							<div class="cell">
+								Attribute
+							</div>
+							<div class="cell">
+								Value
+							</div>
+						</div>
+						<div class="row">
+							<div class="cell" data-title="Attribute">
+								Name
+							</div>
+							<div class="cell" data-title="Name">
+								{{ data['name'] }}
+							</div>
+						</div>
+						<div class="row">
+							<div class="cell" data-title="Attribute">
+								ASIN
+							</div>
+							<div class="cell">
+								{{ data['asin'] }}
+							</div>
+						</div>
+						<div class="row">
+							<div class="cell" data-title="Attribute">
+								Price
+							</div>
+							<div class="cell" data-title="Value">
+								{{ data['price'] }}
+							</div>
+						</div>
+						<div class="row">
+							<div class="cell" data-title="Attribute">
+								Rating
+							</div>
+							<div class="cell" data-title="Value">
+								{{ data['rating'] }}
+							</div>
+						</div>
+						<div class="row">
+							<div class="cell" data-title="Attribute">
+								Number of Reviews
+							</div>
+							<div class="cell" data-title="Value">
+								{{ data['no_of_reviews'] }}
+							</div>
+						</div>
+						<div class="row">
+							<div class="cell" data-title="Attribute">
+								Product Dimensions
+							</div>
+							<div class="cell" data-title="Value">
+								{{ data['product_dimensions'] }}
+							</div>
+						</div>
+						<div class="row">
+							<div class="cell" data-title="Attribute">
+								Merchant Token
+							</div>
+							<div class="cell" data-title="Value">
+								{{ data['merchant_token'] }}
+							</div>
+						</div>
+						<div class="row">
+							<div class="cell" data-title="Attribute">
+								Brand
+							</div>
+							<div class="cell" data-title="Value">
+								{{ data['brand'] }}
+							</div>
+						</div>
+						<div class="row">
+							<div class="cell" data-title="Attribute">
+								Link of Reviews
+							</div>
+							<div class="cell" data-title="Value">
+								{{ data['link_to_all_reviews'] }}
+							</div>
+						</div>
+						<div class="row">
+							<div class="cell" data-title="Attribute">
+								Variants
+							</div>
+							<div class="cell" data-title="Value">
+								{{ data['variants'] }}
+							</div>
+						</div>
+						<div class="row">
+							<div class="cell" data-title="Attribute">
+								Item Weight
+							</div>
+							<div class="cell" data-title="Value">
+								{{ data['item_weight'] }}
+							</div>
+						</div>
+						<div class="row">
+							<div class="cell" data-title="Attribute">
+								Best Seller Rating
+							</div>
+							<div class="cell" data-title="Value">
+								{{ data['bsr'] }}
+							</div>
+						</div>
+						<div class="row">
+							<div class="cell" data-title="Attribute">
+								UPC
+							</div>
+							<div class="cell" data-title="Value">
+								{{ data['upc'] }}
+							</div>
+						</div>
+						<div class="row">
+							<div class="cell" data-title="Attribute">
+								Ranking
+							</div>
+							<div class="cell" data-title="value">
+								{{ data['ranking'] }}
+							</div>
+						</div>
+						<div class="row">
+							<div class="cell" data-title="Attribute">
+								Images
+							</div>
+							<div class="cell" data-title="Value">
+								{{ data['images'] }}
+							</div>
+						</div>
+						<div class="row">
+							<div class="cell" data-title="Attribute">
+								Bullet Points
+							</div>
+							<div class="cell" data-title="Value">
+								{{ data['bullet_points'] }}
+							</div>
+						</div>
+						<div class="row">
+							<div class="cell" data-title="Attribute">
+								Product Description
+							</div>
+							<div class="cell" data-title="Value">
+								{{ data['product_description'] }}
+							</div>
+						</div>
+						<div class="row">
+							<div class="cell" data-title="Attribute">
+								Related Products
+							</div>
+							<div class="cell" data-title="Value">
+								<p class=" fix-width">{{ data['related_products'] }}</p>
+							</div>
+						</div>
+						{% endif %}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+
+</html>

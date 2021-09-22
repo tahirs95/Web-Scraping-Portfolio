@@ -1,0 +1,98 @@
+name:
+    css: '#productTitle'
+    type: Text
+
+asin:
+    xpath: '//*[contains(@id,"productDetails")]/tr/th[normalize-space()="ASIN"]/following-sibling::td | //div[@id="detailBullets_feature_div"]/ul/li/span/span[contains(text(),"ASIN")]/following-sibling::span'
+    type: Text
+
+price: 
+    xpath: '//span[@id="newBuyBoxPrice"] | //span[@id="priceblock_ourprice"] | //span[@id="price_inside_buybox"]'
+    type: Text
+
+rating:
+    xpath: '//div[@id="averageCustomerReviews_feature_div"]/descendant::span'
+    type: Text
+
+no_of_reviews:
+    xpath: //a[@id="acrCustomerReviewLink"]/span
+    type: Text
+
+product_dimensions:
+    xpath: '//*[contains(@id,"productDetails")]/tr/th[normalize-space()="Product Dimensions"]/following-sibling::td | //*[contains(@id,"productDetails")]/tr/th[normalize-space()="Package Dimensions"]/following-sibling::td | //div[@id="detailBullets_feature_div"]/ul/li/span/span[contains(text(),"Product Dimensions")]/following-sibling::span | //div[@id="detailBullets_feature_div"]/ul/li/span/span[contains(text(),"Package Dimensions")]/following-sibling::span'
+    type: Text
+
+related_products: 
+  xpath: //*[contains(@id,'sp_detail2_B0')]/a
+  multiple: true
+  type: Link
+  attribute: href
+
+merchant_token:
+    css: '#sellerProfileTriggerId'
+    type: Link
+    attribute: href
+
+brand:
+    xpath: '//*[contains(@id,"productDetails")]/tr/th[normalize-space()="Brand"]/following-sibling::td | //*[@id="bylineInfo"] | //div[@id="productOverview_feature_div"]/descendant::span[contains(text(),"Brand")]/following-sibling::td'
+    type: Text
+
+images:
+    css: '.imgTagWrapper img'
+    type: Attribute 
+    attribute: data-a-dynamic-image
+
+link_to_all_reviews:
+    css: 'div.card-padding a.a-link-emphasis'
+    type: Link
+ 
+amazon_choice_badge:
+    xpath: //div[@id="acBadge_feature_div"]/div/span/span
+
+product_description:
+  xpath: //div[@id="productDescription"] 
+
+products_bought_together:
+  xpath: //div[@class='_p13n-desktop-sims-fbt_fbt-desktop_sims-fbt-rows__2LJXs']/ul/li
+  multiple: true
+  type: Link
+  attribute: href
+
+variants:
+  xpath: //form[@id="twister"]/div/ul/li
+  multiple: true
+  type: Attribute
+  attribute: data-defaultasin   
+
+bullet_points:
+    xpath: '//div[@id="featurebullets_feature_div"]/div/ul/li'
+    type: Text
+    multiple: true
+
+bsr:
+    xpath: "//span[normalize-space()='Best Sellers Rank:']/parent::* | //th[normalize-space()='Best Sellers Rank']/parent::*"
+    type: Text
+
+questions:
+    xpath: '//div[@class="a-section askTeaserQuestions"]/descendant::div[@class="a-fixed-left-grid-col a-col-right"]/a[contains(@href,"/ask/questions/")]/span'
+    type: Text
+    multiple: True
+        
+answers:
+    xpath: "//div[@class='a-section askTeaserQuestions']/descendant::div[@class='a-fixed-left-grid-col a-col-right']/span |  //div[@class='a-section askTeaserQuestions']/a[contains(normalize-space(),'Answer this question')]"
+    type: Text
+    multiple: True
+    
+item_weight:
+    xpath: " //div[@id='detailBullets_feature_div']/descendant::span[contains(text(),'Item Weight')]/following-sibling::span | //*[contains(@id,'productDetails')]/tr/th[normalize-space()='Item Weight']/following-sibling::td" 
+    type: Text
+
+upc: 
+    xpath: '//div[@id="detailBullets_feature_div"]/descendant::span[contains(text(),"UPC")]/following-sibling::span | //*[contains(@id,"productDetails")]/tr/th[normalize-space()="UPC"]/following-sibling::td'
+    type: Text
+
+qa_link:
+  xpath: //div[@id="ask-btf_feature_div"]/descendant::a[contains(@href,("https://www.amazon.com/ask/questions/asin/"))]
+  type: Link
+  attribute: href
+ 
